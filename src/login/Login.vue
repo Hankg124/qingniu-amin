@@ -30,6 +30,7 @@ const submitForm=()=>{
             const res = await loginApi(ruleForm.value);
             if(res.data.code==200){
                 store.token=res.data.data;
+                localStorage.setItem('token',res.data.data)
                 router.push('/');
             }
         }

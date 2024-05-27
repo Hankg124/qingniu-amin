@@ -7,7 +7,7 @@ import router from './router'
 
 import pinia from '@/stores/index'
 
-
+import '@/permisstion/permisstion'
 
 const app = createApp(App)
 

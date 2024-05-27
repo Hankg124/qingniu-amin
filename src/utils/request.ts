@@ -18,8 +18,8 @@ const service:AxiosInstance = axios.create({
 
 // 请求拦截器
 service.interceptors.request.use((config:InternalAxiosRequestConfig)=>{
-    const store=useCounterStore();
-    const token=store.token;
+    
+    const token=localStorage.getItem('token');
     if(token){
         config.headers.Authorization='Bearer '+token;
     }

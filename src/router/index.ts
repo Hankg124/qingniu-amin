@@ -15,9 +15,10 @@ const router = createRouter({
       path: '/',
       name: 'index',
       component: () => import('@/layout/index.vue'),
-      meta: {
-        title: '首页'
-      },
+      // meta: {
+      //   title: '首页'
+      // },
+      redirect:'/dashboard/home',
       children: [
         //面板
         {
@@ -35,11 +36,12 @@ const router = createRouter({
           meta:{
             title:'权限管理'
           },
+          redirect:'/permission/user',
           children: [
             {
               path: '/permission/user',
               name: 'user',
-              component: () => import('@/views/permission/user.vue'),
+              component: () => import('@/views/permission/user/user.vue'),
               meta: {
                 title: '用户管理'
               },
@@ -47,7 +49,7 @@ const router = createRouter({
             {
               path: '/permission/role',
               name: 'role',
-              component: () => import('@/views/permission/role.vue'),
+              component: () => import('@/views/permission/role/role.vue'),
               meta: {
                 title: '角色管理'
               },
@@ -55,7 +57,7 @@ const router = createRouter({
             {
               path: '/permission/menu',
               name: 'menu',
-              component: () => import('@/views/permission/menu.vue'),
+              component: () => import('@/views/permission/menu/menu.vue'),
               meta: {
                 title: '菜单管理'
               },
@@ -69,6 +71,7 @@ const router = createRouter({
           meta:{
             title:'训练管理'
           },
+          redirect:'/train/classroom',
           children: [
             {
               path: '/train/classroom',
@@ -100,5 +103,6 @@ const router = createRouter({
     }
   ]
 })
+
 
 export default router

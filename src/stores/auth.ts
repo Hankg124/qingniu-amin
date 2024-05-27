@@ -6,6 +6,8 @@ export const useCounterStore = defineStore('login', () => {
 
     const token = ref<string>('');
     const info = ref<Object>();
+    const isCollapse = ref(false);
+    const tags=ref([])
 
     const getInfo = async () => {
         try {
@@ -20,7 +22,8 @@ export const useCounterStore = defineStore('login', () => {
     return {
         token,
         getInfo,
-        info
+        info,
+        isCollapse
     }
 }, {
     persist: true,
